@@ -24,7 +24,7 @@ export type RenderType =
   | 'BASE64_TO_LOCAL_PDF'
   | 'URL_TO_BASE64'
   | 'GOOGLE_READER'
-  | 'GOOGLE_DRIVE_VIEWER';
+  | 'GOOGLE_DRIVE_VIEWER'
 
 export interface CustomStyle {
   readerContainer?: CSS.Properties<any>
@@ -299,9 +299,9 @@ class PdfReader extends React.Component<Props, State> {
       const { renderType } = this.state
       switch (renderType!) {
         case 'GOOGLE_DRIVE_VIEWER': {
-          break;
+          break
         }
-        
+
         case 'URL_TO_BASE64': {
           const data = await fetchPdfAsync(source)
           await writeWebViewReaderFileAsync(
@@ -353,7 +353,7 @@ class PdfReader extends React.Component<Props, State> {
     }
 
     if (useGoogleDriveViewer) {
-      return 'GOOGLE_DRIVE_VIEWER';
+      return 'GOOGLE_DRIVE_VIEWER'
     }
 
     if (Platform.OS === 'ios') {
@@ -386,7 +386,7 @@ class PdfReader extends React.Component<Props, State> {
       case 'GOOGLE_READER':
         return { uri: getGoogleReaderUrl(uri!) }
       case 'GOOGLE_DRIVE_VIEWER':
-        return { uri: getGoogleDriveUrl(uri) };
+        return { uri: getGoogleDriveUrl(uri!) }
       case 'DIRECT_BASE64':
       case 'URL_TO_BASE64':
         return { uri: htmlPath }
