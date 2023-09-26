@@ -104,3 +104,9 @@ interface Props {
 ## Hire an expert!
 
 Looking for a ReactNative freelance expert with more than 12 years experience? Contact me from my [website](https://xaviercarpentier.com)!
+
+
+add those entries to package.json for build
+
+"prepublishOnly": "yarn verify && yarn config:npm",
+    "postpublish": "yarn config:dev",

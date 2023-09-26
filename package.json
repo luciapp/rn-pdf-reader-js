@@ -1,6 +1,6 @@
 {
   "name": "@luciapp/rn-pdf-reader-js",
-  "version": "4.1.4",
+  "version": "4.1.5",
   "description": "PDF reader for Expo",
   "main": "node_modules/expo/AppEntry.js",
   "types": "lib/index.d.ts",
@@ -15,8 +15,6 @@
     "config:npm": "json -I -f package.json -e 'this.main=\"lib/index.js\"'",
     "lint": "tslint --project .",
     "verify": "yarn lint && yarn tsc && yarn build",
-    "prepublishOnly": "yarn verify && yarn config:npm",
-    "postpublish": "yarn config:dev",
     "cleaning": "rm -rf node_modules && rm -f yarn.lock && yarn cache clean && yarn install && watchman watch-del-all && rm -fr $TMPDIR/react-*"
   },
   "keywords": [
@@ -31,7 +29,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stratoss/rn-pdf-reader-js.git"
+    "url": "git+https://github.com/luciapp/rn-pdf-reader-js"
   },
   "peerDependencies": {
     "expo": "*",
